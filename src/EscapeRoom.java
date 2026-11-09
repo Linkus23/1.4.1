@@ -80,6 +80,7 @@ public class EscapeRoom {
         System.out.println("Invalid input. Please try again");
         score -= 5;
         continue;
+      }
 
       /* process user commands */
 
