@@ -66,7 +66,20 @@ public class EscapeRoom {
 
       // get user command and validate
       System.out.print("Enter command (type help for a list of commands):");
-      String input = UserInput.getValidInput(validCommands);
+      String input = UserInput.getLine().toLowerCase();
+
+      boolean isValid = false;
+      for (String cmd : validCommands) {
+        if (input.equals(cmd)) {
+          isValid = true;
+          break;
+        }
+      }
+
+      if (!isValid) {
+        System.out.println("Invalid input. Please try again");
+        score -= 5;
+        continue;
 
       /* process user commands */
 
